@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模仿360</title>
+	<link rel="stylesheet" href="./css/copy1.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.fullPage.min.js"></script>
+</head>
+<body>
+	<div id="fullpage">
+	    <!-- 第一屏 -->
+		<div class="section first">
+		<div class="box">
+		    <div class="cover"></div>
+			<div class="box1"></div>
+			<div class="box2"></div>
+		</div>
+		<div class="box">
+		    <div class="cover"></div>
+			<div class="box1"></div>
+			<div class="box2"></div>
+		</div>
+		<div class="box">
+		    <div class="cover"></div>
+			<div class="box1"></div>
+			<div class="box2"></div>
+		</div>
+			<div class="logo"></div>
+			<div class="text">
+				<img src="images/text_1.png" alt="">
+				<img src="images/text_2.png" alt="">
+				<img src="images/text_3.png" alt="">
+				<img src="images/text_4.png" alt="">
+				<img src="images/text_5.png" alt="">
+				<img src="images/text_6.png" alt="">
+				<img src="images/text_7.png" alt="">
+				<img src="images/text_8.png" alt="">
+			</div>
+			<div class="text2">
+				<img src="images/info_1.png" alt="">
+			</div>
+		</div>
+		<!-- 第二屏 -->
+		<div class="section">
+			
+		</div>
+		<!-- 第三屏 -->
+		<div class="section">
+			
+		</div>
+		<!-- 第四屏 -->
+		<div class="section">
+			
+		</div>
+	</div>
+	<script>
+		$("#fullpage").fullpage({
+			sectionsColor:['#fff', '#2AB561', '#DE8910', '#16BA9D', '#0DA5D6'],
+			afterLoad: function (arc, key) {
+
+		 		// 将所有屏的current移除
+		 		$('.section').removeClass('current');
+
+		 		// 设置延时
+		 		setTimeout(function () {
+		 			// 当前屏的DOM元素
+		 			$('.section').eq(key - 1).addClass('current');
+		 		}, 50);
+		 	}
+		})
+	</script>
+</body>
+</html>
